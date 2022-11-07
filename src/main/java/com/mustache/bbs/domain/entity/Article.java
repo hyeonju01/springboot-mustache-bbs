@@ -2,8 +2,8 @@ package com.mustache.bbs.domain.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,12 +15,25 @@ public class Article {
     @Id //@Entity가 붙어있으면 꼭 붙여줘야 한다. PK를 의미한다.
     @GeneratedValue //auto-increment
     private Long id;
+
+    @Column
     private String title;
+    @Column
+
     private String content;
 
-    public Article(String title, String content) {
+    public Article(Long id, String title, String content) {
         this.title = title;
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }
 
