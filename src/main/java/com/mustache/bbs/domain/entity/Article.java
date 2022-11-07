@@ -26,15 +26,6 @@ public class Article {
         this.title = title;
         this.content = content;
     }
-
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
 }
 
 // 여기서 하나라도 빼먹을 경우, 스프링부트가 뜨지 않음.
